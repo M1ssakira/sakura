@@ -10,7 +10,7 @@ Note: The length of given array won't exceed 10000.
 
 '''
 
-# 待看...
+
 
 class Solution(object):
     def nextGreaterElements(self, nums):
@@ -26,6 +26,7 @@ class Solution(object):
         return res
 
 
+# url: http://blog.csdn.net/liuchuo/article/details/54960652
 '''
 题目大意：给一个循环数组，返回一个等长的数组，数组中的每一个元素是：它后面的第一个大于它的元素（如果后面没有就循环一遍到最前面找，直到循环了一圈为止），如果不存在这样的数，就返回-1～
 分析：首先建立一个等长的result数组，起始都是-1。和Next Greater Element I类似，不过这个题目要两个循环解决，第一个循环i从0～n-1，对于每一个nums[i]，把他们的下标index都放入栈中。但是在放入栈之前需要做这样的事情：比较栈顶元素和nums[i]，如果恰好比nums[i]小，说明nums[i]就是它的第一大元素，就将result[s.top()]的值变为nums[i]，这样栈中的下标始终是它的后面找不到比他大的元素的下标，也就是说栈中在遍历一遍后剩下的元素的值都是递减次序的～
