@@ -45,3 +45,8 @@ def foo(name):
 # 中的那种，这点要注意
 foo('rubik')
 ```
+closure
+---
+- We must have a nested function (function inside a function).
+- The nested function must refer to a value defined in the enclosing function.
+- The enclosing function must return the nested function.
